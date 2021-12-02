@@ -1,0 +1,19 @@
+{
+  "name": "jquery_validation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "validate-config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.6.0",
+    "jquery-validation": "^1.19.3"
+  },
+  "devDependencies": {
+    "browserify": "^17.0.0"
+  }
+}
