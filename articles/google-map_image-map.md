@@ -1,5 +1,5 @@
 ---
-title: "楽天モバイルサービスエリアマップで使用されるマップについて"
+title: "楽天モバイルサービスエリアマップで使用される領域マップについて"
 emoji: "🌏"
 type: "tech"
 topics: ["GoogleMapsAPI"]
