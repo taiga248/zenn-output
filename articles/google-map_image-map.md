@@ -1,5 +1,5 @@
 ---
-title: "楽天モバイルのサービスエリアマップを支える技術"
+title: "楽天モバイルサービスエリアマップで使用されるマップについて"
 emoji: "🌏"
 type: "tech"
 topics: ["GoogleMapsAPI"]
@@ -37,7 +37,7 @@ Google マップは正方形の画像の組み合わせで構成されており�
 
 ![マップ画像](https://user-images.githubusercontent.com/38455912/154842001-b7bed08f-1d65-4412-a94d-d1aa9be6d9f5.png)
 
-こちらのサイトで実際にマップを操作しながら座標情報を確認することができます。
+こちらのサイトで実際にマップを操作しながら座標情報を確認可能
 https://maptiler.jp/google-maps-coordinates-tile-bounds-projection/#8/44.81/56.32
 
 #### 3. 領域画像
@@ -45,7 +45,7 @@ https://maptiler.jp/google-maps-coordinates-tile-bounds-projection/#8/44.81/56.3
 > マップの座標について
 
 で説明したタイルの枚数分の領域画像を用意する必要があります。
-[楽天モバイル エリアマップ](https://network.mobile.rakuten.co.jp/area/)を開いて Network タブを見てみると、領域画像を取得しているのが確認できることかと思います。
+[楽天モバイル エリアマップ](https://network.mobile.rakuten.co.jp/area/)を開き、Network タブを見てみると、領域画像を取得しているのが確認できることかと思います。
 ![タイル](https://user-images.githubusercontent.com/38455912/155762196-71821d2d-b0a6-4b55-9134-5914bf8941a8.png)
 
 座標(x, y), Zoom レベルを元に S3 などから参照取得していると思われます。
