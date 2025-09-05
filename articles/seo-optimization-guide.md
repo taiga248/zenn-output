@@ -3,7 +3,7 @@ title: "テクニカル SEO は何をすればいいのか"
 emoji: "🔍"
 type: "tech"
 topics: ["SEO", "Google Search Console", "Web分析", "マーケティング"]
-published: false
+published: true
 publication_name: "sonicmoov"
 ---
 
