@@ -4,7 +4,7 @@ emoji: "🔍"
 type: "tech"
 topics: ["SEO", "Google Search Console", "Web分析", "マーケティング"]
 published: false
-publication_name: "株式会社ソニックムーブ"
+publication_name: "sonicmoov"
 ---
 
 # テクニカル SEO はとりあえず何をすればいいのか
