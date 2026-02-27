@@ -14,25 +14,27 @@ Flex Message・Template Message のJSONサンプルと、見た目の対応を�
 
 > プロパティの完全な仕様は [LINE Messaging API Reference](https://developers.line.biz/en/reference/messaging-api/#flex-message) を参照してください。
 
----
-
 ## 動作確認の方法
 
-**Flex Message Simulator** でプレビューできるのは **Flex Message だけ**です。
+サンプルの見た目を確認する方法は、メッセージの種類によって異なります。
 
-- <https://developers.line.biz/flex-simulator/>
-- Flex Message の `contents` の中身（`bubble` や `carousel` オブジェクト）をそのまま貼り付けると見た目を確認できます。
+**Flex Message** は **Flex Message Simulator** でプレビューを確認可能です。
+※このシュミレータは後述するFlexMessage専用
 
-**Simulator では確認できないもの**
+<https://developers.line.biz/flex-simulator/>
+
+上記サイト上で、Flex Message の `contents` の中身（`bubble` や `carousel` オブジェクト）をそのまま貼り付けることで見た目を確認することができます。
+
+**Flex Message Simulator では確認できないもの**
 
 - Template Message 全種
 - 通常メッセージ（テキスト／画像／スタンプ等）
 - Quick Reply／sender 付きメッセージ
 
-上記はSimulator上でプレビューの確認ができません。
+:::message
+上記はSimulator上でプレビューを確認することができません。
 これらは Webhook で送るか、記事末尾の [送信用スクリプト](#送信用スクリプトターミナルから送る) で確認が可能です。
-
----
+:::
 
 ## メッセージの種類
 
@@ -56,8 +58,6 @@ LINE Messaging API で送れるメッセージの種類は以下のとおりで�
 | レイアウトの自由度 | 低い（固定レイアウト）            | 高い（自由に組める）           |
 | JSONの複雑さ       | シンプル                          | ネストが深くなりやすい         |
 | 向いているケース   | 2択確認・シンプルなボタンメニュー | 通知カード・予約確認・商品紹介 |
-
----
 
 # Flex Message
 
@@ -84,8 +84,6 @@ Flex Messageの送信オブジェクトの基本形です。
 Bubbleは **header / hero / body / footer** の4ブロックで構成されており、使いたいブロックだけ定義すれば問題ありません。
 
 ![Bubbleの構成（header / hero / body / footer）](/images/line-messaging-api/1.webp)
-
----
 
 ### レイアウトの基本：Box の layout
 
@@ -120,8 +118,6 @@ Bubbleは **header / hero / body / footer** の4ブロックで構成されて�
 ```
 
 左右に並びます。`flex` の数値が幅の比率になります（この例では 2:3）。
-
----
 
 ## 1. サンプル：通知カード
 
@@ -193,8 +189,6 @@ Bubbleは **header / hero / body / footer** の4ブロックで構成されて�
 - `footer` のボタンは `style: "primary"` で塗りつぶし、`style: "link"` でテキストのみになります。
 - `separator` で区切り線を引けます。
 
----
-
 ## 2. サンプル：メイン画像付きカード
 
 ```json
@@ -224,8 +218,6 @@ Bubbleは **header / hero / body / footer** の4ブロックで構成されて�
 
 - `aspectMode: "cover"` で画像が枠いっぱいにトリミングされます。
 - `"fit"` にすると画像全体が収まるよう余白が入ります。
-
----
 
 ## 3. サンプル：カルーセル（複数カードを横スクロール）
 
@@ -316,15 +308,11 @@ Bubbleは **header / hero / body / footer** の4ブロックで構成されて�
 - `contents` の配列にBubbleを追加するだけで枚数を増やせます。
 - 最大12枚まで設定できます。
 
----
-
 # Template Message（定型レイアウト）
 
 Flex Messageより手軽に書ける定型レイアウトです。
 レイアウトの自由度は低いですが、シンプルなUIであればこちらで十分なケースも多いです。
 種類は4つ存在します。
-
----
 
 ## 4. サンプル：Buttons Template
 
@@ -354,8 +342,6 @@ Flex Messageより手軽に書ける定型レイアウトです。
 
 ボタンは最大4つまで設定できます。画像・タイトルは省略可能です。
 
----
-
 ## 5. サンプル：Confirm Template
 
 「はい / いいえ」のような2択の確認ダイアログです。
@@ -379,9 +365,7 @@ Flex Messageより手軽に書ける定型レイアウトです。
 
 ![Confirm Templateの見た目イメージ](/images/line-messaging-api/6.webp)
 
-ボタンは必ず2つ固定です。
-
----
+ボタンは必ず2つ必要です。
 
 ## 6. サンプル：Carousel Template
 
@@ -429,8 +413,6 @@ Flex Messageより手軽に書ける定型レイアウトです。
 
 最大10カラムまで設定できます。各カラムのボタンは最大3つです。
 
----
-
 ## 7. サンプル：Image Carousel Template
 
 画像のみを横スクロールで並べるシンプルなレイアウトです。
@@ -469,8 +451,6 @@ Flex Messageより手軽に書ける定型レイアウトです。
 
 テキストやボタンは持てません。画像タップ時のアクションを1つだけ設定できます。最大10枚まで設定できます。
 
----
-
 # オプション
 
 メッセージオブジェクトや送信リクエストに追加できるオプションです。
@@ -479,8 +459,6 @@ Flex Messageより手軽に書ける定型レイアウトです。
 以下で紹介する Quick Reply と sender は、Simulator ではプレビューできません。
 
 実際に LINE に送信して確認してください（後述のスクリプトや Webhook を利用できます）。
-
----
 
 ## Quick Reply（返答ボタン）
 
@@ -526,8 +504,6 @@ Flex Message に限らず、すべてのメッセージタイプで使えます�
 
 タップするとボタンが消えて、`text` に指定した文字列がメッセージとして送信されます。最大13個まで並べられます。
 
----
-
 ## sender（送信者アイコン・名前の変更）
 
 送信リクエストに `sender` を追加すると、メッセージバブルの送信者アイコンと名前を変更できます。
@@ -538,37 +514,33 @@ Flex Message に限らず、すべてのメッセージタイプで使えます�
   "to": "Uxxxx",
   "messages": [
     {
-      "type": "flex",
-      "altText": "...",
-      "contents": { "..." }
+      "type": "text",
+      "text": "こんにちは",
+      "sender": {
+        "name": "ここの名前を変更できます",
+        "iconUrl": "https://placehold.jp/150x150.png"
+      }
     }
-  ],
-  "sender": {
-    "name": "山田 太郎（担当）",
-    "iconUrl": "https://placehold.jp/150x150.png"
-  }
+  ]
 }
 ```
 
 **見た目イメージ**：
 
-```
-  [アイコン]  山田 太郎（担当）from 公式アカウント名
-  ┌───────────────────────────┐
-  │  メッセージ内容             │
-  └───────────────────────────┘
-```
+![senderの見た目イメージ](/images/line-messaging-api/10.webp)
 
 名前には自動で「from 公式アカウント名」が付与されます。
 ユーザーが公式アカウントと個人を混同しないようにするための仕様です。
 
 変わるのはメッセージバブル内の表示だけで、トーク一覧・友達リスト・検索結果のアイコンや名前はデフォルトのまま変わりません。
 
----
+# シミュレータ非対応のメッセージ動作確認用スクリプト
 
-## シミュレーター非対応のメッセージ動作確認用スクリプト
+- Channel アクセストークン
+- LINE User ID
+- メッセージ JSON
 
-Channel アクセストークン・LINE User ID・メッセージ JSON を指定して、プッシュメッセージを送信するスクリプトです。
+上記3点を指定して、プッシュメッセージを送信するスクリプトです。
 Quick Reply や sender 付きメッセージの確認に使えます。
 
 **使い方**
@@ -619,6 +591,6 @@ else
 fi
 ```
 
-- **CHANNEL_ACCESS_TOKEN** … LINE Developers のチャネル設定で発行したアクセストークン
-- **LINE_USER_ID** … 送信先の User ID（Webhook の `source.userId` などで取得）
-- **messages.json** … 送信するメッセージの JSON（1件のオブジェクト、またはオブジェクトの配列）
+- **CHANNEL_ACCESS_TOKEN**：LINE Developers Console で発行したアクセストークン
+- **LINE_USER_ID**：送信先の User ID（Webhook の `source.userId` などで取得）
+- **messages.json**：送信するメッセージの JSON（1件のオブジェクト、またはオブジェクトの配列）

@@ -1,0 +1,13 @@
+{
+  "to": "U1c07a28a6b620896a418b86ce0ff707d",
+  "messages": [
+    {
+      "type": "text",
+      "text": "こんにちは",
+      "sender": {
+        "name": "ここの名前を変更できます",
+        "iconUrl": "https://placehold.jp/150x150.png"
+      }
+    }
+  ]
+}
