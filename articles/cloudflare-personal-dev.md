@@ -3,7 +3,7 @@ title: "普段AWS触っている自分が、Cloudflareのサービスを整理�
 emoji: "☁️"
 type: "tech"
 topics: ["cloudflare", "typescript", "workers", "個人開発"]
-published: false
+published: true
 publication_name: "sonicmoov"
 ---
 
@@ -12,7 +12,7 @@ publication_name: "sonicmoov"
 業務では普段AWSを使っています。Lambda + DynamoDB + S3 + CloudFront + Cognito...と、要件に応じてサービスを組み合わせる設計にはある程度慣れています。
 
 一方、本記事で扱う話題のCloudflareは触ったことがありませんでした。
-ふんわりとした理解を説明できるレベルまでに底上げしたく、本記事はその整理も兼ね「何をどう組み合わせるべきか」の判断軸を中心にまとめたものになります。
+ふんわりとした理解を説明できるレベルまでに底上げしたく、整理も兼ね「何をどう組み合わせるべきか」の判断軸を中心にまとめたものになります。
 ※実務レベルの本格的な検証ではなく、あくまで個人開発で触ってみた範囲での整理
 
 各サービスをイメージしやすいよう、普段AWSを使っている方向けに似た機能も併記しています。
