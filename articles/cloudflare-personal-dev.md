@@ -1,5 +1,5 @@
 ---
-title: "普段AWS触っている自分が、Cloudflareのサービスを整理してみた"
+title: "普段AWSを触っている自分が、Cloudflareのサービスを整理してみた"
 emoji: "☁️"
 type: "tech"
 topics: ["cloudflare", "typescript", "workers", "個人開発"]
